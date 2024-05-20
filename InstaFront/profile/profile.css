@@ -1,0 +1,19 @@
+#profile-container img
+{
+    width: 70px;
+    height: 70px;
+    border-radius: 50px;
+}
+
+#profile-container>div
+{
+    display: flex;
+    width: 100%;
+    padding: 25px;
+    padding-bottom: 10px;
+}
+#profile-container>span
+{
+    display: block;
+    padding-left: 25px;
+}

@@ -4,7 +4,7 @@
     width: 30%;
     position: absolute;
     left: 50%;
-    top: 50%;
+    top: 54%;
     transform: translate(-50%,-50%);
     text-align: center;
     border-radius: 10px;
@@ -21,7 +21,7 @@
     text-align: left;
 }
 
-#sign-up
+#sign-up-link
 {
     font-size: 14px;
     color: rgb(148, 148, 148);

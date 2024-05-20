@@ -40,12 +40,13 @@ $("#register-form").submit(function (e) {
                     sessionStorage.setItem("username",username);
                     $('#content').load('home/home.html');
                     $('#logout-btn').css("visibility", "visible");
+                    $("#bottom").show();
                 }
             }
         });
 });
 
-$("#log-in").click(function (e) {
+$("#log-in-link").click(function (e) {
     e.preventDefault();
     $("#content").load("login/login.html"); 
 });

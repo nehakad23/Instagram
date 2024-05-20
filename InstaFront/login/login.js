@@ -16,18 +16,19 @@ $('#login-form').submit(function (e) {
             complete: function (response) {
                 console.log(response);
                 if(response.responseText=="Incorrect"){
-                    $('#alert-danger').css("visibility", "visible");
+                    alert("Incorrect username or password. Please enter valid credentials!");
                 }
                 else{
                     sessionStorage.setItem("username",response.responseText);
                     $('#content').load('home/home.html');
                     $('#logout-btn').css("visibility", "visible");
+                    $("#bottom").show();
                }
          }
         });
 });
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
-$("#sign-up").click(function (e) {
+$("#sign-up-link").click(function (e) {
     e.preventDefault();
     $("#content").load("register/register.html"); 
 });

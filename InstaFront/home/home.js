@@ -8,7 +8,6 @@ $.ajax({
        }
        else
        {
-        console.log(response.responseJSON);
             let arr = response.responseJSON;
             for (let i = 0; i < arr.length; i++) { 
                 $("#home-content").append(

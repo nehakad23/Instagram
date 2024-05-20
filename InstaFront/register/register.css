@@ -1,15 +1,14 @@
 #register-form{
-    padding: 0 20px;
+    padding: 10px 20px;
     width: 30%;
     position: absolute;
     left: 50%;
-    top: 50.3%;
+    top: 54%;
     transform: translate(-50%,-50%);
     border-radius: 10px;
     border: 2px solid #e8e6e6;
     background: white;
     text-align: center;
-    height: 83vh;
 }
 #register-form>div{
     margin: 7px;
@@ -37,8 +36,9 @@ input::file-selector-button
 #submit-btn
 {
     display: block;
+    margin-bottom: 5px;
 }
-#log-in
+#log-in-link
 {
     font-size: 14px;
     color: rgb(148, 148, 148);
