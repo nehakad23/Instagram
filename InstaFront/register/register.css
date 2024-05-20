@@ -1,0 +1,46 @@
+#register-form{
+    padding: 0 20px;
+    width: 30%;
+    position: absolute;
+    left: 50%;
+    top: 50.3%;
+    transform: translate(-50%,-50%);
+    border-radius: 10px;
+    border: 2px solid #e8e6e6;
+    background: white;
+    text-align: center;
+    height: 83vh;
+}
+#register-form>div{
+    margin: 7px;
+    text-align: left;
+}
+#register-form #bio
+{
+    height: 20px;
+    resize: none;
+}
+#pic
+{
+    width: 100%;
+    margin: 10px 0;
+    border: 1px solid #dee2e6;
+    border-radius: 0.375rem;
+}
+input::file-selector-button
+{
+    background: rgb(68, 63, 69);
+    border: none;
+    color: white;
+    padding: 5px 10px;
+}
+#submit-btn
+{
+    display: block;
+}
+#log-in
+{
+    font-size: 14px;
+    color: rgb(148, 148, 148);
+    text-decoration: none;
+}

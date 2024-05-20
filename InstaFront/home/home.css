@@ -1,0 +1,15 @@
+.post-div{
+    margin: 15px 0px;
+}
+.post-username{
+    display: block;
+    margin: 6px 15px;
+}
+.post-img{
+    width: 100%;
+    height: auto;
+}
+.like-btn{
+    margin-top: 15px;
+    margin: 6px 10px;
+}

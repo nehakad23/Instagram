@@ -1,0 +1,29 @@
+#login-form 
+{
+    padding: 40px 30px;
+    width: 30%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    border-radius: 10px;
+    border: 2px solid #e8e6e6;
+    background: white;
+}
+#login-form>*
+{
+    margin: 10px;
+}
+
+#login-form>div
+{
+    text-align: left;
+}
+
+#sign-up
+{
+    font-size: 14px;
+    color: rgb(148, 148, 148);
+    text-decoration: none;
+}
