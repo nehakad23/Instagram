@@ -17,8 +17,8 @@ $(document).ready(function(){
 
     $("#profile-link").click(function (e) {
         e.preventDefault();
-        $("#content").load("profile/profile.html");
         sessionStorage.setItem("profile",sessionStorage.getItem("username"));
+        $("#content").load("profile/profile.html");
     });
 });
 

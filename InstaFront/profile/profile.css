@@ -1,19 +1,108 @@
-#profile-container img
+#profile-container
 {
-    width: 70px;
-    height: 70px;
+    width: 100%;
+}
+
+#img-count-div
+{
+    display: flex;
+}
+
+#profile-pic
+{
+    flex: 0 0 34%;
+    padding: 15px;
+}
+#profile-pic img
+{
+    width: 100px;
+    height: 100px;
     border-radius: 50px;
 }
 
-#profile-container>div
+#counts
+{
+    flex-grow: 1;
+    display: flex;
+    text-align: center;
+    align-items: center;
+}
+#counts>div
+{
+    flex: 0 0 33.33%;
+    line-height: 28px;
+    cursor: pointer;
+}
+#counts span
+{
+    font-size: xx-large;
+    display: block;
+}
+
+#bio-btn-div
 {
     display: flex;
-    width: 100%;
-    padding: 25px;
-    padding-bottom: 10px;
+    border-bottom: 3px solid rgba(66, 66, 66, 0.070);
 }
-#profile-container>span
+
+#bio-div
+{
+    flex: 0 0 37%;
+    padding-bottom: 20px;
+}
+#bio-div>*
 {
     display: block;
-    padding-left: 25px;
+    padding-left: 15px;
+}
+
+small 
+{
+    font-size: small;
+    color: gray;
+}
+
+#btn-div
+{
+    width: 100%;
+    display: flex;
+    gap: 10px;
+    padding: 10px;
+    height: max-content;
+}
+#btn-div>button
+{
+    flex: 1 1 auto;
+    border-radius: 8px;
+    border: 2px solid rgba(66, 66, 66, 0.100);
+    background-color: white;
+    font-weight: 600;
+    line-height: 10px;
+    font-size: .9rem;
+    padding: 11px 0;
+}
+
+#posts
+{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 4px;
+}
+
+#posts>img
+{
+    padding: 2px;
+    width: 33.33%;
+}
+
+#no-content
+{
+    font-size: x-large;
+    color: gray;
+}
+
+.modal .btn
+{
+    border-width: 2px!important;
+    font-weight: 600!important;
 }

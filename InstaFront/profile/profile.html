@@ -1,5 +1,41 @@
 <div id="profile-container">
-    <div></div>
+    <div id="info-container">
+        <div id="img-count-div">
+            <div id="profile-pic"></div>
+            <div id="counts"></div>
+        </div>
+        <div id="bio-btn-div">
+            <div id="bio-div"></div>
+            <div id="btn-div">
+            </div>
+        </div>
+    </div>
+    <div id="post-container">
+        <div style="padding: 5px 15px;">Posts</div>
+        <div id="posts">
+            <span id="no-content" style="display: none; padding-left: 25px;">No Posts to show</span>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Delete Profile</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <p>Are you sure you want to delete your profile?</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-outline-danger" onclick="deleteProfile()">Delete</button>
+            </div>
+          </div>
+        </div>
+      </div>
 </div>
+
 <link rel="stylesheet" href="profile/profile.css">
 <script src="profile/profile.js"></script>

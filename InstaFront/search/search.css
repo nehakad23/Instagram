@@ -2,10 +2,14 @@
     background: white;
     width: 100%;
     padding: 10px;
+    position: relative;
 }
 
 #search-bar{
     margin-bottom: 10px;
+    background-color: rgb(66, 66, 66, .100);
+    /* color: gray;  */
+    font-size: 18px;
 }
 
 #search-list{
@@ -20,6 +24,7 @@
     padding: 10px 25px;
     display: flex;
     gap: 25px;
+    cursor: pointer;
 }
 
 .search-img{
@@ -34,5 +39,12 @@
 }
 
 .search-name{
-    font-size: .70rem;   
+    font-size: .70rem; 
+    color: gray;  
+}
+
+li#no-content
+{
+    font-size: x-large;
+    color: gray;
 }

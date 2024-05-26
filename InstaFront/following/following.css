@@ -1,0 +1,68 @@
+#following-container{
+    background: white;
+    width: 100%;
+    padding: 10px;
+}
+#following-list{
+    flex: 1;
+    margin: 0;
+    padding: 0;
+    margin-top: 10px;
+}
+
+#following-list>li
+{
+    list-style: none;
+    padding: 10px 25px;
+    display: flex;
+    gap: 25px;
+}
+
+.following-img{
+    border-radius: 25px;
+    height: 45px;
+}
+
+#following-list>li>div
+{
+    flex-grow: 1;
+    display: flex;
+    gap: 25px;
+    cursor: pointer;
+}
+
+.following-username{
+    display: block;
+    height: 35%;
+    font-weight: 600;
+}
+
+.following-name{
+    font-size: .70rem;   
+    color: gray;
+}
+
+li#no-content
+{
+    font-size: x-large;
+    color: gray;
+}
+
+.unfollow, .follow
+{
+    border-radius: 8px;
+    border: 2px solid rgba(66, 66, 66, 0.100);
+    background-color: white;
+    font-weight: 600;
+    font-size: .9rem;
+    padding: 0 12px;
+    margin-top: 2px;
+    margin-bottom: 12px;
+    float: right;
+}
+
+.follow
+{
+    color: white;
+    background-color: #45adff;
+}

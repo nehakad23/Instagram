@@ -128,7 +128,7 @@ public class UserServiceImpl implements UserService {
         List<User> list1 = userRepository.findByUsernameContaining(query);
         List<User> list2 =userRepository.findByNameContaining(query);
         list1.addAll(list2);
-        return list1.stream().map(s->userUtility.entityToDto(s)).collect(Collectors.toList());
+        return list1.stream().distinct().map(s->userUtility.entityToDto(s)).collect(Collectors.toList());
     }
 
     @Override
