@@ -21,6 +21,7 @@
 .follower-img{
     border-radius: 25px;
     height: 45px;
+    width: 45px;
 }
 
 #follower-list>li>div
@@ -44,7 +45,7 @@
 
 li#no-content
 {
-    font-size: x-large;
+    font-size: large;
     color: gray;
 }
 

@@ -107,7 +107,7 @@ public class PostServiceImpl implements PostService {
         String url ="http://localhost:8000/user/view-profile/"+username;
         UserDto userDto= restTemplate.getForObject(url,UserDto.class); // checking whether username is valid
         if (userDto!=null){
-            String url1 ="http://localhost:8002/my-following?follower="+username;
+            String url1 ="http://localhost:8002/follow/my-following?follower="+username;
           List<UserDto> userDtos = List.of(restTemplate.getForObject(url1, UserDto[].class)); // getting all followers
           List<PostDto> postDtos = new ArrayList<>();
           if (!userDtos.isEmpty()){            // checking if there are no followers

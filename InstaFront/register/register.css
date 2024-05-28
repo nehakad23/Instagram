@@ -13,6 +13,15 @@
 #register-form>div{
     margin: 7px;
     text-align: left;
+    position: relative;
+}
+.fa-eye
+{
+    position: absolute;
+    color: rgb(162, 162, 162);
+    top: 36px;
+    right: 15px;
+    cursor: pointer;
 }
 #register-form #bio
 {

@@ -1,0 +1,35 @@
+#update-form{
+    padding: 10px 20px;
+    width: 30%;
+    position: absolute;
+    left: 50%;
+    top: 50.5%;
+    transform: translate(-50%,-50%);
+    border-radius: 10px;
+    border: 2px solid #e8e6e6;
+    background: white;
+    text-align: center;
+}
+#update-form>div{
+    margin: 7px;
+    text-align: left;
+    position: relative;
+}
+.fa-eye
+{
+    position: absolute;
+    color: rgb(162, 162, 162);
+    top: 36px;
+    right: 15px;
+    cursor: pointer;
+}
+#update-form #bio
+{
+    height: 20px;
+    resize: none;
+}
+#submit-btn
+{
+    display: block;
+    margin-bottom: 5px;
+}

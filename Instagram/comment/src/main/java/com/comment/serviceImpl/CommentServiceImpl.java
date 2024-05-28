@@ -8,6 +8,7 @@ import com.comment.repository.CommentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Comparator;
 import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -23,10 +24,10 @@ public class CommentServiceImpl implements CommentService {
 
 
     @Override
-    public String createComment(CommentDto commentDto, int postId, String username) {
+    public CommentDto createComment(CommentDto commentDto, int postId, String username) {
         Comment comment = new Comment(postId,new Date(),username, commentDto.getMessage());
         commentRepository.save(comment);
-        return "Commented!";
+        return commentUtility.entityToDto(comment);
 
     }
 
@@ -39,6 +40,6 @@ public class CommentServiceImpl implements CommentService {
     @Override
     public List<CommentDto> viewComments(int postId) {
         List<Comment> commentList = commentRepository.findByPostId(postId);
-        return commentList.stream().map(comment -> commentUtility.entityToDto(comment)).collect(Collectors.toList());
+        return commentList.stream().map(comment -> commentUtility.entityToDto(comment)).sorted(Comparator.comparing(CommentDto::getDate).reversed()).collect(Collectors.toList());
     }
 }

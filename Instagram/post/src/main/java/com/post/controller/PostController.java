@@ -18,7 +18,7 @@ public class PostController {
     PostService postService;
 
     @PostMapping("create-post/{username}")
-    public ResponseEntity<String> createPost(@RequestBody PostDto postDto , @PathVariable String username, @RequestParam MultipartFile image){
+    public ResponseEntity<String> createPost(@RequestPart PostDto postDto , @PathVariable String username, @RequestPart MultipartFile image){
 
         String message = postService.createPost(postDto,username,image);
         if (message.equals("Post created successfully.")){

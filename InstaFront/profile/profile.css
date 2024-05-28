@@ -12,12 +12,26 @@
 {
     flex: 0 0 34%;
     padding: 15px;
+    position: relative;
+}
+.fa-pen
+{
+    position: absolute;
+    bottom: 20px;
+    left: 90px;
+    padding: 5px;
+    border-radius: 20px;
+    font-size: .8rem;
+    color: white;
+    background-color: #45adff;
+    cursor: pointer;
 }
 #profile-pic img
 {
     width: 100px;
     height: 100px;
     border-radius: 50px;
+    cursor: pointer;
 }
 
 #counts
@@ -93,11 +107,13 @@ small
 {
     padding: 2px;
     width: 33.33%;
+    height: 175px;
+    cursor: pointer;
 }
 
 #no-content
 {
-    font-size: x-large;
+    font-size: large;
     color: gray;
 }
 
@@ -105,4 +121,10 @@ small
 {
     border-width: 2px!important;
     font-weight: 600!important;
+}
+
+.modal img
+{
+    width: 400px;
+    height: auto;
 }

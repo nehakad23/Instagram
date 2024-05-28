@@ -27,7 +27,18 @@ $('#login-form').submit(function (e) {
          }
         });
 });
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
+        
+function showPassword() {
+    let type = $('#password').attr('type');
+    if(type=="password") { 
+        $('#password').attr('type','text');
+    }
+    else
+    {
+        $('#password').attr('type','password');
+    }
+}
+
 $("#sign-up-link").click(function (e) {
     e.preventDefault();
     $("#content").load("register/register.html"); 

@@ -1,9 +1,7 @@
 package com.follower.controller;
 
-import com.follower.dto.FollowerDto;
 import com.follower.service.FollowerService;
 import com.user.dto.UserDto;
-import com.user.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -12,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@RequestMapping("/follow")
 public class FollowerController {
     @Autowired
     FollowerService followerService;

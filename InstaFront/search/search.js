@@ -16,7 +16,7 @@ $("#search-bar").on("input", function(e) {
                     let arr = response.responseJSON;
                     for (let i = 0; i < arr.length; i++) { 
                         $("#search-list").append(`<li onclick="viewProfile(this)" value="${arr[i]["username"]}">
-                        <img class="search-img" src="https://source.unsplash.com/random/35x35"></img>
+                        <img class="search-img" src='data:image/png;base64,${arr[i]["profilePic"]}'></img>
                         <div><span class="search-username">${arr[i]["username"]}</span>
                         <span class="search-name">${arr[i]["name"]}</span></div>
                         </li>`);

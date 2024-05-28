@@ -1,6 +1,6 @@
 $.ajax({
     type: "GET",
-    url: "http://localhost:9000/my-followers?username="+sessionStorage.getItem("profile"),
+    url: "http://localhost:9000/follow/my-followers?username="+sessionStorage.getItem("profile"),
     dataType: "json",
     complete: function (response) {
         if(response.responseJSON == null || response.responseJSON.length==0){
@@ -10,7 +10,7 @@ $.ajax({
             let arr = response.responseJSON;
             for (let i = 0; i < arr.length; i++) { 
                 $("#follower-list").append(`<li><div onclick="viewProfile(this)" value="${arr[i]["username"]}">
-                <img class="follower-img" src="https://source.unsplash.com/random/35x35"></img>
+                <img class="follower-img" src='data:image/png;base64,${arr[i]["profilePic"]}'></img>
                 <div><span class="follower-username">${arr[i]["username"]}</span>
                 <span class="follower-name">${arr[i]["name"]}</span></div></div>
                 <button class="remove-follower" onClick="remove(this)">Remove</button>
@@ -40,7 +40,7 @@ function remove(e)
     let follower = $(e).closest("li").children().first().attr("value");
     $.ajax({
         type: "DELETE",
-        url: "http://localhost:9000/remove/"+follower+"?username="+sessionStorage.getItem("username")
+        url: "http://localhost:9000/follow/remove/"+follower+"?username="+sessionStorage.getItem("username")
     });
     $(e).closest("li").remove();
 }

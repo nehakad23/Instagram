@@ -11,4 +11,6 @@ public interface LikeService {
     String unlike(int postId, String username);
 
     List<UserDto> viewLikes(int postId);
+
+    Boolean isLiked(int postId, String username);
 }

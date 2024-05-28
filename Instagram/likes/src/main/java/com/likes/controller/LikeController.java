@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@RequestMapping("/like")
 public class LikeController {
 
     @Autowired
@@ -26,10 +27,6 @@ public class LikeController {
     public ResponseEntity<String> unlike(@RequestParam int postId, @RequestParam String username)
     {
         String message = likeService.unlike(postId, username);
-        if(message.equals("not found"))
-        {
-            return new ResponseEntity<>(message, HttpStatus.NOT_FOUND);
-        }
         return new ResponseEntity<>(message, HttpStatus.OK);
     }
 
@@ -44,10 +41,11 @@ public class LikeController {
         return new ResponseEntity<>(userDtoList, HttpStatus.OK);
     }
 
-    @GetMapping("like-count")
-    public ResponseEntity<Integer> likeCount(@RequestParam int postId)
+    //extras
+    @GetMapping("is-liked")
+    public ResponseEntity<Boolean> likeCount(@RequestParam int postId, @RequestParam String username)
     {
-        int count = likeService.viewLikes(postId).size();
-        return new ResponseEntity<>(count, HttpStatus.OK);
+        Boolean check = likeService.isLiked(postId, username);
+        return new ResponseEntity<>(check, HttpStatus.OK);
     }
 }

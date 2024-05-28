@@ -46,6 +46,17 @@ $("#register-form").submit(function (e) {
         });
 });
 
+function showPassword() {
+    let type = $('#password').attr('type');
+    if(type=="password") { 
+        $('#password').attr('type','text');
+    }
+    else
+    {
+        $('#password').attr('type','password');
+    }
+}
+
 $("#log-in-link").click(function (e) {
     e.preventDefault();
     $("#content").load("login/login.html"); 

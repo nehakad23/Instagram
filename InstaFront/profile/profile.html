@@ -1,7 +1,10 @@
 <div id="profile-container">
     <div id="info-container">
         <div id="img-count-div">
-            <div id="profile-pic"></div>
+            <div id="profile-pic">
+              <i class="fa-solid fa-pen" onclick="updateProfilePic()"></i>
+              <input type="file" onchange="submitProfilePic()" hidden>
+            </div>
             <div id="counts"></div>
         </div>
         <div id="bio-btn-div">
@@ -11,7 +14,7 @@
         </div>
     </div>
     <div id="post-container">
-        <div style="padding: 5px 15px;">Posts</div>
+        <div style="padding: 5px 15px; font-weight: 600; color: #6c6c6c; font-size: 18px;">Posts</div>
         <div id="posts">
             <span id="no-content" style="display: none; padding-left: 25px;">No Posts to show</span>
         </div>
@@ -31,6 +34,15 @@
             <div class="modal-footer">
               <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
               <button type="button" class="btn btn-outline-danger" onclick="deleteProfile()">Delete</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Profile Picture -->
+      <div class="modal" id="picModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-body">
             </div>
           </div>
         </div>

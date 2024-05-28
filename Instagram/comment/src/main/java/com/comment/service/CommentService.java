@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface CommentService {
 
-    String createComment(CommentDto commentDto,int postId, String username);
+    CommentDto createComment(CommentDto commentDto, int postId, String username);
 
     String deleteComment(int commentId);
 

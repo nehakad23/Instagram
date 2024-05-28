@@ -11,16 +11,17 @@ import java.util.List;
 
 
 @RestController
+@RequestMapping("/comment")
 public class CommentController {
 
     @Autowired
     CommentService commentService;
 
     @PostMapping("comment")
-    public ResponseEntity<String> comment(@RequestBody CommentDto commentDto, @RequestParam int postId, @RequestParam String username)
+    public ResponseEntity<CommentDto> comment(@RequestBody CommentDto commentDto, @RequestParam int postId, @RequestParam String username)
     {
-        String message = commentService.createComment(commentDto,postId,username);
-        return new ResponseEntity<>(message, HttpStatus.CREATED);
+        CommentDto commentDto1 = commentService.createComment(commentDto,postId,username);
+        return new ResponseEntity<>(commentDto1, HttpStatus.CREATED);
     }
 
     @DeleteMapping("delete-comment")

@@ -1,16 +1,16 @@
-#following-container{
+#likers-container{
     background: white;
     width: 100%;
     padding: 10px;
 }
-#following-list{
+#likers-list{
     flex: 1;
     margin: 0;
     padding: 0;
     margin-top: 10px;
 }
 
-#following-list>li
+#likers-list>li
 {
     list-style: none;
     padding: 10px 25px;
@@ -18,13 +18,13 @@
     gap: 25px;
 }
 
-.following-img{
+.likers-img{
     border-radius: 25px;
     height: 45px;
     width: 45px;
 }
 
-#following-list>li>div
+#likers-list>li>div
 {
     flex-grow: 1;
     display: flex;
@@ -32,13 +32,13 @@
     cursor: pointer;
 }
 
-.following-username{
+.likers-username{
     display: block;
     height: 35%;
     font-weight: 600;
 }
 
-.following-name{
+.likers-name{
     font-size: .70rem;   
     color: gray;
 }

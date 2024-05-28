@@ -60,6 +60,7 @@ public class UserServiceImpl implements UserService {
         if (optionalUser.isPresent())
         {
             User user = optionalUser.get();
+            user.setName(userDto.getName());
             user.setNumber(userDto.getNumber());
             user.setBio(userDto.getBio());
             user.setEmail(userDto.getEmail());

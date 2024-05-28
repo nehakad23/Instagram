@@ -1,17 +1,14 @@
+body{
+    background: linear-gradient(115deg, #f9ce34, #ee2a7b, #6228d7);
+}
 #main-div
 {
     width: 35%;
     margin: auto;
     display: flex;
-    flex-direction: column;
-    /* background: linear-gradient(115deg, #f9ce34, #ee2a7b, #6228d7);  */
-    background-position: center center;
-    background-size: cover;
-    background-repeat: no-repeat; 
-    background-attachment: fixed; 
-    background-origin: padding-box; 
-    background-clip: border-box;  
+    flex-direction: column; 
     min-height: 100vh;
+    background-color: white;
 }
 #top
 {

@@ -20,10 +20,15 @@ $(document).ready(function(){
         sessionStorage.setItem("profile",sessionStorage.getItem("username"));
         $("#content").load("profile/profile.html");
     });
+
+    $("#post-link").click(function (e) {
+        e.preventDefault();
+        $("#content").load("post/post.html");
+    });
 });
 
 function logout() { 
-    sessionStorage.removeItem("username");
+    sessionStorage.clear();
     $('#content').load('login/login.html');
     $('#logout-btn').css("visibility", "hidden");
     $("#bottom").hide();
