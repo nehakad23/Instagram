@@ -18,6 +18,7 @@ $.ajax({
     type: "GET",
     url: "http://localhost:9000/post/view-all-post/"+profile,
     dataType: "json",
+    async: false,
     complete: function (response) {
         if(response.responseJSON==null || response.responseJSON.length==0)
         {
@@ -39,6 +40,7 @@ $.ajax({
     type: "GET",
     url: "http://localhost:9000/follow/my-followers?username="+profile,
     dataType: "json",
+    async: false,
     complete: function (response) {
         $("#counts").append(`<div onclick="followers()"><span>${response.responseJSON.length}</span><small>followers</small></div>`);
     }
@@ -48,6 +50,7 @@ $.ajax({
     type: "GET",
     url: "http://localhost:9000/follow/my-following?follower="+profile,
     dataType: "json",
+    async: false,
     complete: function (response) {
         $("#counts").append(`<div onclick="following()"><span>${response.responseJSON.length}</span><small>following</small></div>`);
     }

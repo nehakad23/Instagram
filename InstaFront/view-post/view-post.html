@@ -8,5 +8,48 @@
     <a class="comments-link" onclick="comment(this)"></a>
     <span class="post-date"><span style="color: rgb(32, 32, 32); font-size: .8rem;">Posted on </span></span>
 </div>
+
+<!-- Delete Modal -->
+<div class="modal" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Delete Post</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>Are you sure you want to delete this post?</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-outline-danger" onclick="deletePost()">Delete</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Update Modal -->
+<div class="modal" id="updateModal" tabindex="-1" aria-labelledby="updateModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Update Post</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form>
+                <div class="mb-3">
+                  <label for="message-text" class="col-form-label">Post Description</label>
+                  <textarea class="form-control" id="update-desc"></textarea>
+                </div>
+              </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-outline-danger" onclick="updatePost()">Update</button>
+        </div>
+      </div>
+    </div>
+  </div>
 <link rel="stylesheet" href="view-post/view-post.css">
 <script src="view-post/view-post.js"></script>
