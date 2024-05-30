@@ -3,8 +3,9 @@ $.ajax({
     url: "http://localhost:9000/follow/my-following?follower="+sessionStorage.getItem("profile"),
     dataType: "json",
     complete: function (response) {
+        console.log(response.responseJSON);
         if(response.responseJSON == null || response.responseJSON.length==0){
-            $("#follower-list").append(`<li id="no-content"><span>No results found.</span></li>`);
+            $("#following-list").append(`<li id="no-content"><span>No results found.</span></li>`);
         }
         else{
             let arr = response.responseJSON;
@@ -26,13 +27,13 @@ $.ajax({
 
 $("#close").click(function (e) { 
     e.preventDefault();
-    $("#content").load("profile/profile.html");
+    loader("profile/profile.html");
 });
 
 function viewProfile(e)
 {
     sessionStorage.setItem("profile",$(e).attr("value"));
-    $("#content").load("profile/profile.html");
+    loader("profile/profile.html");
 }
 
 function unfollow(e) {

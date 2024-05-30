@@ -26,13 +26,13 @@ $.ajax({
 
 $("#close").click(function (e) { 
     e.preventDefault();
-    $("#content").load("profile/profile.html");
+    loader("profile/profile.html");
 });
 
 function viewProfile(e)
 {
     sessionStorage.setItem("profile",$(e).attr("value"));
-    $("#content").load("profile/profile.html");
+    loader("profile/profile.html");
 }
 
 function remove(e)

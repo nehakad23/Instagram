@@ -124,7 +124,7 @@ function likers(e) {
     if (!$(e).hasClass("disabled")) {
         let id = $(e).closest(".post-div").attr("value");
         sessionStorage.setItem("post", id);
-        $("#content").load("likers/likers.html");
+        loader("likers/likers.html");
     }
 }
 
@@ -134,11 +134,11 @@ function comment(e) {
         let id = $(e).closest(".post-div").attr("value");
         sessionStorage.setItem("profile", postUser);
         sessionStorage.setItem("post", id);
-        $("#content").load("comments/comments.html");
+        loader("comments/comments.html");
     }
 }
 
 function viewProfile(e) {
     sessionStorage.setItem("profile", $(e).text());
-    $("#content").load("profile/profile.html");
+    loader("profile/profile.html");
 }

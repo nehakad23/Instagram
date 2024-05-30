@@ -70,5 +70,5 @@ function deleteComment(e) {
 
 $("#close").click(function (e) { 
     e.preventDefault();
-    $("#content").load("view-post/view-post.html");
+    loader("view-post/view-post.html");
 });

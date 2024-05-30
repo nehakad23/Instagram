@@ -84,7 +84,7 @@ small
     padding: 10px;
     height: max-content;
 }
-#btn-div>button
+#btn-div button
 {
     flex: 1 1 auto;
     border-radius: 8px;

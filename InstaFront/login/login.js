@@ -14,13 +14,12 @@ $('#login-form').submit(function (e) {
             dataType: "json",
             contentType : "application/json",
             complete: function (response) {
-                console.log(response);
                 if(response.responseText=="Incorrect"){
                     alert("Incorrect username or password. Please enter valid credentials!");
                 }
                 else{
                     sessionStorage.setItem("username",response.responseText);
-                    $('#content').load('home/home.html');
+                    loader('home/home.html');
                     $('#logout-btn').css("visibility", "visible");
                     $("#bottom").show();
                }
@@ -41,5 +40,5 @@ function showPassword() {
 
 $("#sign-up-link").click(function (e) {
     e.preventDefault();
-    $("#content").load("register/register.html"); 
+    loader("register/register.html"); 
 });

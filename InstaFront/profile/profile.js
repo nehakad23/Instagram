@@ -6,11 +6,11 @@ $.ajax({
     url: "http://localhost:9000/user/view-profile/"+profile,
     dataType: "json",
     complete: function (response) {
-        $("#profile-pic").append(`<img data-bs-toggle="modal" data-bs-target="#picModal" src = 'data:image/png;base64,${response.responseJSON["profilePic"]}'>`);
-        $("#bio-div").append(`<span style="font-weight: 600; font-size: 1.1rem">${response.responseJSON["username"]}</span>`);
-        $("#bio-div").append(`<small>${response.responseJSON["name"]}</small>`);
-        $("#bio-div").append(`<small>${response.responseJSON["bio"]}</small>`);
-        $("#picModal .modal-body").append(`<img src = 'data:image/png;base64,${response.responseJSON["profilePic"]}'>`);
+        $("#profile-pic>img").attr("src",`data:image/png;base64,${response.responseJSON["profilePic"]}`);
+        $("#bio-div>span").text(response.responseJSON["username"]);
+        $("#bio-div>#name").text(response.responseJSON["name"]);
+        $("#bio-div>#bio").text(response.responseJSON["bio"]);
+        $("#picModal .modal-body>img").attr("src",`data:image/png;base64,${response.responseJSON["profilePic"]}`);
     }
 });
 
@@ -18,17 +18,15 @@ $.ajax({
     type: "GET",
     url: "http://localhost:9000/post/view-all-post/"+profile,
     dataType: "json",
-    async: false,
     complete: function (response) {
         if(response.responseJSON==null || response.responseJSON.length==0)
         {
             $("#no-content").css("display", "block");
-            $("#counts").append(`<div><span>0</span><small>posts</small></div>`);
         }
         else
         {
             let arr = response.responseJSON;
-            $("#counts").append(`<div><span>${arr.length}</span><small>posts</small></div>`);
+            $("#post-cnt").text(arr.length);
             for (let i = 0; i < arr.length; i++) { 
                 $("#posts").append(`<img value=${arr[i]["postId"]} src = 'data:image/png;base64,${arr[i]["image"]}' onclick="viewPost(this)">`);
             }
@@ -40,9 +38,8 @@ $.ajax({
     type: "GET",
     url: "http://localhost:9000/follow/my-followers?username="+profile,
     dataType: "json",
-    async: false,
     complete: function (response) {
-        $("#counts").append(`<div onclick="followers()"><span>${response.responseJSON.length}</span><small>followers</small></div>`);
+        $("#follower-cnt").text(response.responseJSON.length);
     }
 });
 
@@ -50,19 +47,14 @@ $.ajax({
     type: "GET",
     url: "http://localhost:9000/follow/my-following?follower="+profile,
     dataType: "json",
-    async: false,
     complete: function (response) {
-        $("#counts").append(`<div onclick="following()"><span>${response.responseJSON.length}</span><small>following</small></div>`);
+        $("#following-cnt").text(response.responseJSON.length);
     }
 });
 
-if (username==profile)
+if (username!=profile)
 {
-    $("#btn-div").append(`<button onclick ="updateProfile()">Update Profile</button>`);
-    $("#btn-div").append(`<button data-bs-toggle="modal" data-bs-target="#deleteModal">Delete Profile</button>`);
-}
-else
-{
+    $(".edit-btns").hide();
     $(".fa-pen").hide();
     $.ajax({
         type: "GET",
@@ -117,11 +109,11 @@ function submitProfilePic() {
 }
 
 function followers(){ 
-    $("#content").load("followers/followers.html"); 
+    loader("followers/followers.html"); 
 }
 
 function following() {
-    $("#content").load("following/following.html"); 
+    loader("following/following.html"); 
 }
 
 function unfollow() {
@@ -149,16 +141,16 @@ function deleteProfile() {
     });
     //logout
     sessionStorage.clear();
-    $('#content').load('login/login.html');
+    loader('login/login.html');
     $('#logout-btn').css("visibility", "hidden");
     $("#bottom").hide();
 }
 
 function updateProfile() {
-    $("#content").load("update-profile/update-profile.html");
+    loader("update-profile/update-profile.html");
 }
 
 function viewPost(e) {
     sessionStorage.setItem("post",$(e).attr("value"));
-    $("#content").load("view-post/view-post.html");
+    loader("view-post/view-post.html");
 }

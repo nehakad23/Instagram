@@ -22,11 +22,11 @@ $.ajax({
 
 $("#close").click(function (e) { 
     e.preventDefault();
-    $("#content").load("view-post/view-post.html");
+    loader("view-post/view-post.html");
 });
 
 function viewProfile(e)
 {
     sessionStorage.setItem("profile",$(e).attr("value"));
-    $("#content").load("profile/profile.html");
+    loader("profile/profile.html");
 }

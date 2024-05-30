@@ -1,35 +1,45 @@
 $(document).ready(function(){
     if(sessionStorage.getItem('username')==null)
     {
-        $('#content').load('login/login.html');
+        loader('login/login.html');
     }
     else
     {
-        $('#content').load('home/home.html');
+        loader('home/home.html');
         $('#logout-btn').css("visibility", "visible");
         $("#bottom").show();
     }
 
     $("#search-link").click(function (e) {
         e.preventDefault();
-        $("#content").load("search/search.html"); 
+        loader("search/search.html"); 
     });
 
     $("#profile-link").click(function (e) {
         e.preventDefault();
         sessionStorage.setItem("profile",sessionStorage.getItem("username"));
-        $("#content").load("profile/profile.html");
+        loader("profile/profile.html");
     });
 
     $("#post-link").click(function (e) {
         e.preventDefault();
-        $("#content").load("post/post.html");
+        loader("post/post.html");
     });
 });
 
+function loader(page) {
+    $("#content").hide();
+
+    $(".loader").show();
+    $("#content").load(page);
+    
+    $(".loader").fadeOut(1000);
+    $("#content").fadeIn(2000);
+}
+
 function logout() { 
     sessionStorage.clear();
-    $('#content').load('login/login.html');
+    loader('login/login.html');
     $('#logout-btn').css("visibility", "hidden");
     $("#bottom").hide();
 };

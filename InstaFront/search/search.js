@@ -30,5 +30,5 @@ $("#search-bar").on("input", function(e) {
 function viewProfile(e)
 {
     sessionStorage.setItem("profile",$(e).attr("value"));
-    $("#content").load("profile/profile.html");
+    loader("profile/profile.html");
 }

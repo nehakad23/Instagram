@@ -21,7 +21,7 @@ $("#post-form").submit(function (e) {
             contentType: false,
             processData: false,
             complete: function (response) {
-                $("#content").load("home/home.html");
+                loader("home/home.html");
             }
         });
 });

@@ -53,7 +53,7 @@ $("#update-form").submit(function (e) {
                     alert(response.responseText);
                 }
                 else{
-                    $('#content').load('profile/profile.html');
+                    loader('profile/profile.html');
                 }
             }
         });

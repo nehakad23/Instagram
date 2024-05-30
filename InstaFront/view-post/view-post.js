@@ -101,7 +101,7 @@ function unlike() {
 
 function likers() {
     if (!$(".likers-link").hasClass("disabled")) {
-        $("#content").load("likers/likers.html");
+        loader("likers/likers.html");
     }
 }
 
@@ -109,7 +109,7 @@ function comment(e) {
     if (!$(e).hasClass("disabled")) {
         let postUser = $(e).closest(".post-div").find(".post-username").text();
         sessionStorage.setItem("profile", postUser);
-        $("#content").load("comments/comments.html");
+        loader("comments/comments.html");
     }
 }
 
@@ -118,8 +118,9 @@ function deletePost() {
         type: "DELETE",
         url: "http://localhost:9000/post/delete-post/" + sessionStorage.getItem("post"),
         complete: function (response) {
+            sessionStorage.removeItem("post");
             $('#deleteModal').modal('hide');
-            $("#content").load("profile/profile.html");
+            loader("profile/profile.html");
         }
     });
 }
@@ -136,11 +137,11 @@ function updatePost() {
         contentType: "application/json",
         complete: function (response) {
             $('#updateModal').modal('hide');
-            $('#content').load("view-post/view-post.html");
+            loader("view-post/view-post.html");
         }
     });
 }
 
 function viewProfile(e) {
-    $("#content").load("profile/profile.html");
+    loader("profile/profile.html");
 }

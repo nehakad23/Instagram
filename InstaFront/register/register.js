@@ -38,7 +38,7 @@ $("#register-form").submit(function (e) {
                 }
                 else{
                     sessionStorage.setItem("username",username);
-                    $('#content').load('home/home.html');
+                    loader('home/home.html');
                     $('#logout-btn').css("visibility", "visible");
                     $("#bottom").show();
                 }
@@ -59,5 +59,5 @@ function showPassword() {
 
 $("#log-in-link").click(function (e) {
     e.preventDefault();
-    $("#content").load("login/login.html"); 
+    loader("login/login.html"); 
 });

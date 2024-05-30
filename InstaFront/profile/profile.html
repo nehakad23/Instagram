@@ -1,52 +1,63 @@
 <div id="profile-container">
-    <div id="info-container">
-        <div id="img-count-div">
-            <div id="profile-pic">
-              <i class="fa-solid fa-pen" onclick="updateProfilePic()"></i>
-              <input type="file" onchange="submitProfilePic()" hidden>
-            </div>
-            <div id="counts"></div>
-        </div>
-        <div id="bio-btn-div">
-            <div id="bio-div"></div>
-            <div id="btn-div">
-            </div>
-        </div>
+  <div id="info-container">
+    <div id="img-count-div">
+      <div id="profile-pic">
+        <i class="fa-solid fa-pen" onclick="updateProfilePic()"></i>
+        <input type="file" onchange="submitProfilePic()" hidden>
+        <img data-bs-toggle="modal" data-bs-target="#picModal">
+      </div>
+      <div id="counts">
+        <div><span id="post-cnt">0</span><small>posts</small></div>
+        <div onclick="followers()"><span id="follower-cnt">0</span><small>followers</small></div>
+        <div onclick="following()"><span id="following-cnt">0</span><small>following</small></div>
+      </div>
     </div>
-    <div id="post-container">
-        <div style="padding: 5px 15px; font-weight: 600; color: #6c6c6c; font-size: 18px;">Posts</div>
-        <div id="posts">
-            <span id="no-content" style="display: none; padding-left: 25px;">No Posts to show</span>
-        </div>
+    <div id="bio-btn-div">
+      <div id="bio-div">
+        <span style="font-weight: 600; font-size: 1.1rem"></span>
+        <small id="name"></small>
+        <small id="bio"></small>
+      </div>
+      <div id="btn-div">
+          <button class="edit-btns" onclick ="updateProfile()">Update Profile</button>
+          <button class="edit-btns" data-bs-toggle="modal" data-bs-target="#deleteModal">Delete Profile</button>
+      </div>
     </div>
+  </div>
+  <div id="post-container">
+    <div style="padding: 5px 15px; font-weight: 600; color: #6c6c6c; font-size: 18px;">Posts</div>
+    <div id="posts">
+      <span id="no-content" style="display: none; padding-left: 25px;">No Posts to show</span>
+    </div>
+  </div>
 
-    <!-- Modal -->
-    <div class="modal" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title">Delete Profile</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-              <p>Are you sure you want to delete your profile?</p>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-outline-danger" onclick="deleteProfile()">Delete</button>
-            </div>
-          </div>
+  <!-- Modal -->
+  <div class="modal" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Delete Profile</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>Are you sure you want to delete your profile?</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-outline-danger" onclick="deleteProfile()">Delete</button>
         </div>
       </div>
+    </div>
+  </div>
 
-      <!-- Profile Picture -->
-      <div class="modal" id="picModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-body">
-            </div>
-          </div>
-        </div>
+  <!-- Profile Picture -->
+  <div class="modal" id="picModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-body">
       </div>
+    </div>
+  </div>
+</div>
 </div>
 
 <link rel="stylesheet" href="profile/profile.css">
