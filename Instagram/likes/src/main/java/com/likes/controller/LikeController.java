@@ -36,7 +36,7 @@ public class LikeController {
         List<UserDto> userDtoList = likeService.viewLikes(postId);
         if(userDtoList.isEmpty())
         {
-            return new ResponseEntity<>(userDtoList, HttpStatus.NOT_FOUND);
+            return new ResponseEntity<>(userDtoList, HttpStatus.NO_CONTENT);
         }
         return new ResponseEntity<>(userDtoList, HttpStatus.OK);
     }

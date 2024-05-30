@@ -23,15 +23,13 @@ public class FollowerServiceImpl implements FollowerService {
     RestTemplate restTemplate;
     @Override
     public String follow(String follower, String username) {
-        String url ="http://localhost:8000/user/view-profile/"+username;
-        UserDto userDto = restTemplate.getForObject(url, UserDto.class);
-        if (userDto!= null){
-            Follower follower1 = new Follower(username,follower);
-            followerRepository.save(follower1);
-            return "You started following "+ username;
-        }
-        return "User not found.";
 
+        Optional<Follower> optionalFollower = followerRepository.findByFollowerAndUsername(follower,username);
+        if(!optionalFollower.isPresent()) {
+            Follower follower1 = new Follower(username, follower);
+            followerRepository.save(follower1);
+        }
+            return "You started following "+ username;
     }
 
     @Override
@@ -40,9 +38,8 @@ public class FollowerServiceImpl implements FollowerService {
        if(optionalFollower.isPresent()){
 
            followerRepository.delete(optionalFollower.get());
-           return "Unfollowed.";
        }
-       return "Bad Request.";
+           return "Unfollowed.";
     }
 
     @Override

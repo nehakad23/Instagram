@@ -49,7 +49,7 @@ public class UserController {
     public ResponseEntity<String> updateProfile(@RequestBody @Valid UserDto userDto, @PathVariable String username){
         String message = userService.updateProfile(userDto,username);
         if(message.equals("Profile updated successfully.")){
-            return new ResponseEntity<>(message,HttpStatus.OK);
+            return new ResponseEntity<>(message,HttpStatus.ACCEPTED);
         }
         return new ResponseEntity<>(message, HttpStatus.INTERNAL_SERVER_ERROR);
     }
@@ -58,29 +58,21 @@ public class UserController {
     public ResponseEntity<String> updateProfile(@PathVariable String username, @RequestPart MultipartFile profilePic){
         String message = userService.updateProfilePic(username, profilePic);
         if(message.equals("Profile Pic updated successfully.")){
-            return new ResponseEntity<>(message,HttpStatus.OK);
+            return new ResponseEntity<>(message,HttpStatus.ACCEPTED);
         }
         return new ResponseEntity<>(message, HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
     @DeleteMapping("delete-user/{username}")
     public ResponseEntity<String> deleteProfile(@PathVariable String username){
-
         String message = userService.deleteUser(username);
-        if(message.equals("User deleted successfully.")){
-            return new ResponseEntity<>(message,HttpStatus.OK);
-        }
-        return new ResponseEntity<>(message, HttpStatus.NOT_FOUND);
-
+        return new ResponseEntity<>(message,HttpStatus.OK);
     }
 
     @GetMapping("view-profile/{username}")
     public ResponseEntity<UserDto> viewProfile(@PathVariable String username){
 
         UserDto userDto = userService.viewProfile(username);
-        if(userDto==null){
-            return new ResponseEntity<>(null,HttpStatus.NOT_FOUND);
-        }
         return new ResponseEntity<>(userDto,HttpStatus.OK);
 
     }
@@ -97,7 +89,7 @@ public class UserController {
     {
         String message = userService.login(userDto);
         if(message.equals("Incorrect")) {
-            return new ResponseEntity<>(message, HttpStatus.NOT_FOUND);
+            return new ResponseEntity<>(message, HttpStatus.INTERNAL_SERVER_ERROR);
         }
         return new ResponseEntity<>(message, HttpStatus.OK);
     }
